@@ -1,10 +1,13 @@
 const express = require('express')
 const bookRoutes = require('./src/routes/routes');
 // const bodyParser = require('body-parser')
-const app = express()
 // const db = require('./queries')
-// const path = require('path')
+const path = require('path')
 const port = 5000
+
+const app = express()
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'assets')))
 
 // app.use(express.static(path.join(__dirname, 'public')))
 // app.use(express.static(path.join(__dirname, 'assets')))
@@ -35,3 +38,4 @@ app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
