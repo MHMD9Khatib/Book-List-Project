@@ -3,7 +3,8 @@ const bookRoutes = require('./src/routes/routes');
 // const bodyParser = require('body-parser')
 // const db = require('./queries')
 const path = require('path')
-const port = 5000
+require("env2")(".env");
+const port = process.env.PORT;
 
 const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
@@ -35,7 +36,7 @@ app.get('/', (req, res) => {
 app.use("/api/v1/booklist", bookRoutes);
 
 app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
+  console.log(`App running on port ${port || 3000}.`)
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
