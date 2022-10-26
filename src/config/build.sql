@@ -1,0 +1,9 @@
+BEGIN;
+DROP TABLE IF EXISTS bookinfo;
+CREATE TABLE bookinfo(
+    id  PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    author VARCHAR(150) NOT NULL,
+);
+
+COMMIT;
