@@ -1,4 +1,6 @@
 const Pool = require('pg').Pool
+require("env2")(".env");
+
 const pool = new Pool({
   
   user: 'me',
